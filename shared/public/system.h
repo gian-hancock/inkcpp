@@ -172,7 +172,8 @@ void ink_assert(bool condition, const char* msg = nullptr, Args... args)
 			sprintf(message, msg, args...);
 			throw ink_exception(message);
 		} else {
-			throw ink_exception(msg);
+			// throw ink_exception(msg);
+			exit(1);
 		}
 	}
 }
