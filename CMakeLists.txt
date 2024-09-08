@@ -13,7 +13,7 @@ SET(CMAKE_INSTALL_INCLUDE_DIR include)
 # Add subdirectories
 set(INKCPP_PY OFF CACHE BOOL "Build python bindings")
 set(WHEEL_BUILD OFF CACHE BOOL "Set for build wheel python lib (do not forgett INKCPP_PY")
-set(INKCPP_C OFF CACHE BOOL "Build c library")
+set(INKCPP_C ON CACHE BOOL "Build c library")
 
 if (INKCPP_PY)
 	add_compile_options(-fPIC)

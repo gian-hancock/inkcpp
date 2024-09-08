@@ -1,3 +1,16 @@
+# Gians Notes
+See https://github.com/JBenda/inkcpp/wiki/building#build-and-installation
+```shell
+export CC=/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc
+export CXX=/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++
+mkdir build
+mkdir install
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../install
+cmake --build . --config Release
+cmake --install . --component <component-name e.g. lib>
+```
+
 # inkcpp
 ![build](https://github.com/JBenda/inkcpp/workflows/build/badge.svg "Build Status")
 
