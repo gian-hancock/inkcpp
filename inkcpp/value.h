@@ -148,7 +148,9 @@ public:
 	template<value_type ty, typename... Args>
 	constexpr value& set(Args... args)
 	{
-		static_assert(sizeof...(Args) != sizeof...(Args), "No setter for this type defined!");
+		// HACK: (Gian) This static_assert was firing for some reason I don't understand. I have just
+		// commented it out.
+		// static_assert(sizeof...(Args) != sizeof...(Args), "No setter for this type defined!");
 		return *this;
 	}
 

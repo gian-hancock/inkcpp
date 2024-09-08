@@ -55,9 +55,9 @@ InkValue inkvar_to_c(value& val)
 value inkvar_from_c(InkValue& val)
 {
 	switch (val.type) {
-		case InkValue::ValueTypeBool: return value(val.bool_v);
-		case InkValue::ValueTypeUint32: return value(val.uint32_v);
-		case InkValue::ValueTypeInt32: return value(val.int32_v);
+		case InkValue::ValueTypeBool: return value(static_cast<bool>(val.bool_v));
+		case InkValue::ValueTypeUint32: return value(static_cast<ink::uint32_t>(val.uint32_v));
+		case InkValue::ValueTypeInt32: return value(static_cast<int32_t>(val.int32_v));
 		case InkValue::ValueTypeString: return value(val.string_v);
 		case InkValue::ValueTypeFloat: return value(val.float_v);
 		case InkValue::ValueTypeList: return value(reinterpret_cast<list_interface*>(val.list_v));

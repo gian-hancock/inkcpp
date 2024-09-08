@@ -21,3 +21,4 @@ bin/
 Bin/
 
 cmake-build-debug/
+install/
