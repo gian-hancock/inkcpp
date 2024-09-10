@@ -284,6 +284,11 @@ extern "C" {
 		return reinterpret_cast<HInkStory*>(story::from_file(filename));
 	}
 
+	HInkStory* ink_story_from_binary(unsigned char* data, size_t length, bool freeOnDestroy)
+	{
+		return reinterpret_cast<HInkStory*>(story::from_binary(data, length, freeOnDestroy));
+	}
+
 	void ink_story_delete(HInkStory* self) { delete reinterpret_cast<story*>(self); }
 
 	HInkRunner* ink_story_new_runner(HInkStory* self, HInkGlobals* global_store)
