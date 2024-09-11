@@ -1,6 +1,8 @@
 # Gians Notes
 See https://github.com/JBenda/inkcpp/wiki/building#build-and-installation
 ```shell
+docker run --rm -it -v "/home/gian/repo:/root/repo" devkitpro/devkitarm
+cd ~/repo/inkcpp
 export CC=/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc
 export CXX=/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++
 mkdir build

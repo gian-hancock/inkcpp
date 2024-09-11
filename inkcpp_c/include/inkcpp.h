@@ -2,6 +2,7 @@
 #define _INKCPP_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -384,6 +385,13 @@ typedef struct HInkSTory    HInkStory;
 	 */
 	void
 	    ink_compile_json(const char* input_filename, const char* output_filename, const char** error);
+
+	extern char ink_error_message[512];
+	void ink_error_message_test(unsigned char* data, size_t length, bool freeOnDestroy);
+	/** @memberof HInkStory
+	 *  @copydoc ink::runtime::story::from_binary
+	 */
+	HInkStory* 	 ink_story_from_binary(unsigned char* data, size_t length, bool freeOnDestroy);
 
 
 #ifdef __cplusplus

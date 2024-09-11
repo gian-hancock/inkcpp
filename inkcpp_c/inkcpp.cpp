@@ -286,8 +286,22 @@ extern "C" {
 
 	HInkStory* ink_story_from_binary(unsigned char* data, size_t length, bool freeOnDestroy)
 	{
-		return reinterpret_cast<HInkStory*>(story::from_binary(data, length, freeOnDestroy));
+		try {
+			return reinterpret_cast<HInkStory*>(story::from_binary(data, length, freeOnDestroy));
+		} catch (const std::exception& e) {
+			// ink_error_message = e.what();
+			strncpy(ink_error_message, e.what(), 512);
+			return nullptr;
+		}
 	}
+
+	void ink_error_message_test()
+	{
+		strncpy(ink_error_message, "test", 512);
+	}
+
+	// Declare a global error message variable with a 512 char buffer
+	char ink_error_message[512] = { '\0' };
 
 	void ink_story_delete(HInkStory* self) { delete reinterpret_cast<story*>(self); }
 
